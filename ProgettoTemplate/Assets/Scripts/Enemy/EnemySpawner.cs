@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
             enemy = prefab_ref;
 
             randomNum = Random.Range(0, 4);
-            Instantiate(enemy, findObj.transform.position + new Vector3(randomNum, 0, 0), Quaternion.identity);
+            Instantiate(enemy, findObj.transform.position + new Vector3(0, 0, randomNum), Quaternion.identity);
 
         }
 
@@ -76,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
             enemy = prefab_ref;
 
             randomNum = Random.Range(0, 4);
-            Instantiate(enemy, findObj.transform.position + new Vector3(randomNum, 0, 0), Quaternion.identity);
+            Instantiate(enemy, findObj.transform.position + new Vector3(0, 0, randomNum), Quaternion.identity);
 
 
         }
