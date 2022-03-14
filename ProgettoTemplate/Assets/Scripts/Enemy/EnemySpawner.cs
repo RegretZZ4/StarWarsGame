@@ -1,47 +1,85 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
 public class EnemySpawner : MonoBehaviour
 {
-	[SerializeField] private Transform[] spawnPoints;
-	// [SerializeField] private EnemyAI enemyPrefab; // reference allo script EnemyAI
-	[SerializeField] private float spawnInterval;
-	[SerializeField] private int maxEnemiesNumber;
-	// [SerializeField] private Player player; // reference allo script Player
+    int randomNum;
 
-	// private List<EnemyAI> spawnedEnemies = new List<EnemyAI>(); //Lista Enemy per lo spawn
-	private float timeSinceLastSpawn;
+    float timer;
 
-	private void Start()
-	{
-		timeSinceLastSpawn = spawnInterval;
-	}
+    [SerializeField] GameObject prefab_ref;
+    [SerializeField] Transform lookAt_Player;
+    GameObject enemy;
 
-	private void Update()
-	{
-		timeSinceLastSpawn += Time.deltaTime;
-		if (timeSinceLastSpawn > spawnInterval)
-		{
-			timeSinceLastSpawn = 0f;
-/*
-			if (spawnedEnemies.Count < maxEnemiesNumber)
-			{
-				SpawnEnemy();
-			}
-*/
-		}
-	}
+    int spawnWait = 3;
 
-	private void SpawnEnemy()
-	{
-		//EnemyAI enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);  /DA FARE LO SCRIPT EnemyAI per dare il movimento ai nemici dopo lo spawn
-		//int spawnPointindex = spawnedEnemies.Count % spawnPoints.Length;
-		//enemy.Init(player, spawnPoints[spawnPointindex]);
-		//spawnedEnemies.Add(enemy);
-	}
+    GameObject findObj;
+    
+
+    private void Start()
+    {
+        randomNum = 0;
+        timer = 0;
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= spawnWait)
+        {
+            timer = 0;
+            RandomGen();
+        }
+    }
 
 
+    void RandomGen()
+    {
+        //Random random = new Random();
+        randomNum = Random.Range(0, 3);
+        Debug.Log(randomNum);
+
+        if (randomNum == 0)
+        {
+            findObj = GameObject.Find("SpawnHolder_0");
+            Debug.Log(findObj.name);
+
+            enemy = prefab_ref;
+
+            randomNum = Random.Range(0, 4);
+            Instantiate(enemy, findObj.transform.position + new Vector3(randomNum, 0, 0), Quaternion.identity);
+            enemy.transform.LookAt(lookAt_Player);
+
+
+        }
+        if (randomNum == 1)
+        {
+            findObj = GameObject.Find("SpawnHolder_1");
+            Debug.Log(findObj.name);
+            enemy = prefab_ref;
+
+            randomNum = Random.Range(0, 4);
+            Instantiate(enemy, findObj.transform.position + new Vector3(randomNum, 0, 0), Quaternion.identity);
+
+        }
+
+        if (randomNum == 2)
+        {
+            findObj = GameObject.Find("SpawnHolder_2");
+            Debug.Log(findObj.name);
+
+            enemy = prefab_ref;
+
+            randomNum = Random.Range(0, 4);
+            Instantiate(enemy, findObj.transform.position + new Vector3(randomNum, 0, 0), Quaternion.identity);
+
+
+        }
+
+    }
 }
