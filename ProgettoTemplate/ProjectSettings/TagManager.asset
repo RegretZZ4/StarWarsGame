@@ -12,6 +12,7 @@ TagManager:
   - BuddyBot
   - HUD
   - Console
+  - destroy
   layers:
   - Default
   - TransparentFX

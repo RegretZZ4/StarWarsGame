@@ -18,5 +18,21 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         nv_enemy.SetDestination(player.transform.position);
+        this.transform.LookAt(player.transform);
     }
+
+
+    
+    /*
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.LogWarning("robot distrutto");
+            Destroy(this.gameObject);
+        }
+    }
+
+    */
 }
