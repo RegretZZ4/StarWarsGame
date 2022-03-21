@@ -7,6 +7,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
     public static int damage = 5;
     float range = 100f;
 
+
  
     [SerializeField] Camera enemyCamera;
 
@@ -15,6 +16,8 @@ public class EnemyDamageToPlayer : MonoBehaviour
     float timer;
 
     bool playerHit;
+
+
 
     [SerializeField] GameObject laser_prefab;
 
@@ -25,15 +28,16 @@ public class EnemyDamageToPlayer : MonoBehaviour
     {
         timer = 0;
         playerHit = false;
-       // lineRenderer.GetComponent<LineRenderer>();
+        // lineRenderer.GetComponent<LineRenderer>();
 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 0.5f)
+        if(timer > GameManager.shootTimer)
         {
             timer = 0;
 
@@ -49,6 +53,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
     void Shoot()
     {
+        
         RaycastHit hit;
 
         if (Physics.Raycast(enemyCamera.transform.position, enemyCamera.transform.forward, out hit, range))
@@ -65,6 +70,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
 
             }
+
         }
         
     }
@@ -74,7 +80,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
     }
 
-
+    /*
     void OnDrawGizmos()
     {
         GameObject target;
@@ -90,4 +96,5 @@ public class EnemyDamageToPlayer : MonoBehaviour
         }
         
     }
+    */
 }
