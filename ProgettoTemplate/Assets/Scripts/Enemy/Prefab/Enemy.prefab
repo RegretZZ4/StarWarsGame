@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCamera: {fileID: 2361995524293582178}
+  laser_prefab: {fileID: 2781681594871722508, guid: 063f1e2c2e4ec4a4a9e9f31f78d2e01e,
+    type: 3}
 --- !u!1 &2349150684562069179
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCamera: {fileID: 2361995524293582178}
+  laser_prefab: {fileID: 2781681594871722508, guid: 063f1e2c2e4ec4a4a9e9f31f78d2e01e,
+    type: 3}
 --- !u!1 &3644617038305396251
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCamera: {fileID: 2361995524293582178}
+  laser_prefab: {fileID: 2781681594871722508, guid: 063f1e2c2e4ec4a4a9e9f31f78d2e01e,
+    type: 3}
 --- !u!1 &3881946286281322206
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCamera: {fileID: 2361995524293582178}
+  laser_prefab: {fileID: 2781681594871722508, guid: 063f1e2c2e4ec4a4a9e9f31f78d2e01e,
+    type: 3}
 --- !u!1 &8339349835466525627
 GameObject:
   m_ObjectHideFlags: 0

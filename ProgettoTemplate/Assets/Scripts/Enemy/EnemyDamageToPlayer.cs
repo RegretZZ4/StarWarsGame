@@ -16,6 +16,8 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
     bool playerHit;
 
+    [SerializeField] GameObject laser_prefab;
+
 
 
     // Start is called before the first frame update
@@ -53,10 +55,15 @@ public class EnemyDamageToPlayer : MonoBehaviour
         {
             Debug.Log("SHOOT: " + hit.transform);
 
+            GameObject laser = GameObject.Instantiate(laser_prefab, transform.position, transform.rotation) as GameObject;
+            //  laser.GetComponent<>
+            laser.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
             if(hit.transform.tag == "Player")
             {
                 PlayerLifeManager.hitted = true;
                 playerHit = true;
+
+
             }
         }
         
