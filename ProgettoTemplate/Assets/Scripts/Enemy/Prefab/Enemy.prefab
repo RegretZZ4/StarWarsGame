@@ -215,6 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609040770431519548}
+  - component: {fileID: 6907501331592239946}
   m_Layer: 0
   m_Name: Raycast (3)
   m_TagString: Untagged
@@ -237,6 +238,19 @@ Transform:
   m_Father: {fileID: 4483127067010335587}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6907501331592239946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075397113786667794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f75da706fc646b4fb3614995544a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCamera: {fileID: 2361995524293582178}
 --- !u!1 &2349150684562069179
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8130112535441030385}
+  - component: {fileID: 1426772805764596994}
   m_Layer: 0
   m_Name: Raycast (2)
   m_TagString: Untagged
@@ -268,6 +283,19 @@ Transform:
   m_Father: {fileID: 4483127067010335587}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426772805764596994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349150684562069179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f75da706fc646b4fb3614995544a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCamera: {fileID: 2361995524293582178}
 --- !u!1 &3644617038305396251
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8999276231335650077}
+  - component: {fileID: 3745658942236403812}
   m_Layer: 0
   m_Name: Raycast (1)
   m_TagString: Untagged
@@ -299,6 +328,19 @@ Transform:
   m_Father: {fileID: 4483127067010335587}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3745658942236403812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644617038305396251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f75da706fc646b4fb3614995544a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCamera: {fileID: 2361995524293582178}
 --- !u!1 &3881946286281322206
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4483127067010335587}
-  - component: {fileID: 126609762750739728}
   - component: {fileID: 4741807340538285610}
   m_Layer: 0
   m_Name: RayCastHit
@@ -340,19 +381,6 @@ Transform:
   m_Father: {fileID: 8339349835466519623}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126609762750739728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3881946286281322206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f75da706fc646b4fb3614995544a043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyCamera: {fileID: 2361995524293582178}
 --- !u!65 &4741807340538285610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -666,6 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9063870510033470127}
+  - component: {fileID: 108052494835895608}
   m_Layer: 0
   m_Name: Raycast
   m_TagString: Untagged
@@ -688,6 +717,19 @@ Transform:
   m_Father: {fileID: 4483127067010335587}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108052494835895608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253006835124216046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f75da706fc646b4fb3614995544a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCamera: {fileID: 2361995524293582178}
 --- !u!1 &8339349835466525627
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +745,7 @@ GameObject:
   - component: {fileID: -5560270505548646404}
   - component: {fileID: -8538709835894732201}
   - component: {fileID: 3088466362445065866}
+  - component: {fileID: -6589791038384783295}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -842,3 +885,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6589791038384783295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339349835466525627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be7fbe5b41c1a64c867bca2ffee46bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

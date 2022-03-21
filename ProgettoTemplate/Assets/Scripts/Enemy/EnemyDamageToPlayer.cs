@@ -14,12 +14,15 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
     float timer;
 
+    bool playerHit;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
+        playerHit = false;
        // lineRenderer.GetComponent<LineRenderer>();
 
     }
@@ -28,13 +31,13 @@ public class EnemyDamageToPlayer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 3)
+        if(timer > 0.5f)
         {
             timer = 0;
 
-            randomHit = Random.Range(0, 5);
+            randomHit = Random.Range(0, 100);
 
-            if(randomHit == 2)
+            if(randomHit > 80 && randomHit < 90)
             {
                 Shoot();
             }
@@ -49,34 +52,21 @@ public class EnemyDamageToPlayer : MonoBehaviour
         if (Physics.Raycast(enemyCamera.transform.position, enemyCamera.transform.forward, out hit, range))
         {
             Debug.Log("SHOOT: " + hit.transform);
+
+            if(hit.transform.tag == "Player")
+            {
+                PlayerLifeManager.hitted = true;
+                playerHit = true;
+            }
         }
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        RaycastHit sphereHit;
-        if (other.gameObject.tag == "destroy")
-        {
-            //OnDrawGizmosSelected();
-            if (Physics.SphereCast(this.transform.position, 5f, this.transform.forward, out sphereHit, range))
-            {
-                Debug.Log("SPHERE CAST !! " + sphereHit.transform);
-                
-                
 
-            }
-            Invoke("DestroyEnemy", 0.3f);
-
-
-
-        }
     }
 
-    void DestroyEnemy()
-    {
-        Destroy(this.transform.parent.gameObject);
-    }
 
     void OnDrawGizmos()
     {
@@ -84,7 +74,13 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
         target = GameObject.Find("Player");
         // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, target.transform.position);
+
+        if (playerHit)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, target.transform.position);
+            playerHit = false;
+        }
+        
     }
 }

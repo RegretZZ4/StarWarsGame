@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLifeManager : MonoBehaviour
 {
     public static int health;
-    //public static bool hitted;
+    public static bool hitted;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,21 @@ public class PlayerLifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HealthUpdate();
     }
 
-    void HelathUpdate()
+    void HealthUpdate()
     {
         //if hitted by Enemy
         // health =- 10
+
+        if (hitted)
+        {
+            health -= EnemyDamageToPlayer.damage;
+
+            Debug.LogWarning("PLAYER HEALTH: " + health);
+
+            hitted = false;
+        }
     }
 }
