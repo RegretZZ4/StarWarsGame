@@ -52,7 +52,8 @@ public class EnemyDamageToPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "destroy")
         {
-            Destroy(this.gameObject);
+            
+            Destroy(this.transform.parent.gameObject);
         }
     }
 }
