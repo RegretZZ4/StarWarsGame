@@ -214,6 +214,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LightSaber",
+                    "type": "Button",
+                    "id": "4a9f81ef-96b9-4cc6-87de-4e21fd769409",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -588,6 +597,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "03203d34-d420-4219-9fec-f9494de62022",
+                    "path": "<XRController>{LeftHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightSaber",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

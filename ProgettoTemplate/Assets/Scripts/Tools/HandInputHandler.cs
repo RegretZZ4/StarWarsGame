@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.SceneManagement;
-
+using System;
 
 /// <summary>
 /// Agganciare questo script ai controller vr
@@ -18,6 +18,8 @@ public class HandInputHandler : MonoBehaviour
     protected XRBaseController controller;
     [SerializeField]
     protected InputActionReference RestartAction;
+    [SerializeField]
+    protected InputActionReference LightSaberAction;
  
 
 
@@ -25,6 +27,12 @@ public class HandInputHandler : MonoBehaviour
     {
         controller = GetComponent<XRBaseController>();
         RestartAction.action.performed += Restart;
+        LightSaberAction.action.performed += ActivateLightSaber;
+    }
+
+    private void ActivateLightSaber(InputAction.CallbackContext obj)
+    {
+        throw new NotImplementedException();
     }
 
     private void Restart(InputAction.CallbackContext obj)

@@ -17,16 +17,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogWarning(shootTimer);
 
         timer += Time.deltaTime;
 
-        if(timer >= 300f)
+        if(timer >= 100f)
         {
             shootTimer = 2f;
         }
 
-        if(timer >= 600f)
+        if(timer >= 200f)
         {
             shootTimer = 1f;
         }
