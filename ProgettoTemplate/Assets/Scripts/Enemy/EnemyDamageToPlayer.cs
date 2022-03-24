@@ -8,8 +8,10 @@ public class EnemyDamageToPlayer : MonoBehaviour
     float range = 100f;
 
 
- 
-    [SerializeField] Camera enemyCamera;
+
+    //[SerializeField] Camera enemyCamera;
+
+    
 
     int randomHit;
 
@@ -18,7 +20,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
     bool playerHit;
 
 
-
+    [SerializeField] GameObject startPos;
     [SerializeField] GameObject laser_prefab;
 
 
@@ -56,7 +58,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
         
         RaycastHit hit;
 
-        if (Physics.Raycast(enemyCamera.transform.position, enemyCamera.transform.forward, out hit, range))
+        if (Physics.Raycast(startPos.transform.position, startPos.transform.forward, out hit, range))
         {
             Debug.Log("SHOOT: " + hit.transform);
 
