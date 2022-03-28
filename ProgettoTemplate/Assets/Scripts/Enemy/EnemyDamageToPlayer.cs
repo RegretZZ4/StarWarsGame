@@ -20,6 +20,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
     bool playerHit;
 
 
+    //Rigidbody rigidbody;
     [SerializeField] GameObject startPos;
     [SerializeField] GameObject laser_prefab;
 
@@ -31,6 +32,8 @@ public class EnemyDamageToPlayer : MonoBehaviour
         timer = 0;
         playerHit = false;
         // lineRenderer.GetComponent<LineRenderer>();
+
+        
 
         
     }
@@ -62,7 +65,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
         {
             Debug.Log("SHOOT: " + hit.transform);
 
-            GameObject laser = GameObject.Instantiate(laser_prefab, transform.position, transform.rotation) as GameObject;
+            GameObject laser = GameObject.Instantiate(laser_prefab, this.transform.position, transform.rotation) as GameObject;
             //  laser.GetComponent<>
             laser.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
             if(hit.transform.tag == "Player")
@@ -79,7 +82,17 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
+            if (other.gameObject.tag == "enemyLaser")
+            {
+                var opposite = -rigidbody.velocity;
+            //var opposite = laser.GetComponen
+            //laser.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
+                rigidbody.AddForce(opposite * Time.deltaTime);
+            }
 
+        */
+        
     }
 
     /*

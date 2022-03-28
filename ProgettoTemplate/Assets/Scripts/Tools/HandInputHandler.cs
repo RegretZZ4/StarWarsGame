@@ -18,8 +18,8 @@ public class HandInputHandler : MonoBehaviour
     protected XRBaseController controller;
     [SerializeField]
     protected InputActionReference RestartAction;
-    [SerializeField]
-    protected InputActionReference LightSaberAction;
+   // [SerializeField]
+    //protected InputActionReference LightSaberAction;
  
 
 
@@ -27,7 +27,7 @@ public class HandInputHandler : MonoBehaviour
     {
         controller = GetComponent<XRBaseController>();
         RestartAction.action.performed += Restart;
-        LightSaberAction.action.performed += ActivateLightSaber;
+        //LightSaberAction.action.performed += ActivateLightSaber;
     }
 
     private void ActivateLightSaber(InputAction.CallbackContext obj)

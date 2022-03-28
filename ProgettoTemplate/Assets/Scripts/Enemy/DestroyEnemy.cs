@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public class DestroyEnemy : MonoBehaviour
 {
     bool hitted;
+    int contHit;
     // Start is called before the first frame update
     void Start()
     {
         hitted = false;
+        contHit = 0;
     }
 
     // Update is called once per frame
@@ -36,8 +38,20 @@ public class DestroyEnemy : MonoBehaviour
             Destroy(this.gameObject, 0.2f);
         }
 
-        
-        
+        if (other.gameObject.tag == "enemyLaser")
+        {
+            if (LaserCollision.bouncedLaser)
+            {
+                contHit++;
+                if (contHit >= 2)
+                {
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+
+
+
     }
 
 }

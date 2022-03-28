@@ -9,14 +9,16 @@ public class LightSaber : MonoBehaviour
     GameObject laser;
     Vector3 fullSize;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
         laser = transform.Find("SingleLine-LightSaber").gameObject;
         fullSize = laser.transform.localScale;
-        laser.transform.localScale = new Vector3(fullSize.x, 0, fullSize.z);
+        laser.transform.localScale = new Vector3(0, 0, 0);
+
+        //HandInputHandler = GameObject.Find("XR Origin_custom").GetComponent<HandInputHandler>();
     }
 
     // Update is called once per frame
@@ -29,25 +31,38 @@ public class LightSaber : MonoBehaviour
         }
         */
 
+        //LaserController();
 
+        
 
-        LaserController();
     }
 
-    private void LaserController()
+    public void LaserController()
     {
-        if (laser.transform.localScale.y < fullSize.y && active)
-        {
+        
             laser.SetActive(true);
-            laser.transform.localScale += new Vector3(0, 0.0001f, 0);
-        }
-        else if (laser.transform.localScale.y > 0 && !active)
+            laser.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
+        
+        
+    }
+
+
+
+    public void ColliderDisable()
+    {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        laser.SetActive(true);
+        //laser.GetComponent<CapsuleCollider>().enabled = false;
+    }
+
+    public void ColliderEnable()
+    {
+        this.gameObject.GetComponent<BoxCollider>().enabled = true;
+        if (laser.transform.localScale.y > 0)
         {
-            laser.transform.localScale += new Vector3(0, -0.0001f, 0);
+            laser.transform.localScale = new Vector3(0, 0, 0);
         }
-        else if (!active)
-        {
-            laser.SetActive(false);
-        }
+        laser.SetActive(false);
+        //laser.GetComponent<CapsuleCollider>().enabled = true;
     }
 }

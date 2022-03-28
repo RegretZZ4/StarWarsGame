@@ -948,6 +948,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a8f3007c-6886-4d56-a872-3f01fdf88222",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "92bb5b8f-bf48-4dab-af05-50a865773895",
                     "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",

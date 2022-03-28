@@ -13,6 +13,10 @@ TagManager:
   - HUD
   - Console
   - destroy
+  - lookAt
+  - saber
+  - enemyLaser
+  - enemy
   layers:
   - Default
   - TransparentFX
