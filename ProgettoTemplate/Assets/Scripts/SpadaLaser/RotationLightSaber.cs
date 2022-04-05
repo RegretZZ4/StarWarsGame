@@ -18,8 +18,7 @@ public class RotationLightSaber : MonoBehaviour
     void Update()
     {
         // RotateSaber();
-        if(!count)
-            StartCoroutine(RotationSaber());
+       
     }
 
     void RotateSaber()
@@ -35,7 +34,7 @@ public class RotationLightSaber : MonoBehaviour
         */
     }
 
-    IEnumerator RotationSaber()
+    public IEnumerator RotationSaber()
     {
         count = true;
 
@@ -57,5 +56,26 @@ public class RotationLightSaber : MonoBehaviour
 
         count = false;
 
+    }
+
+    public void GetRotationSaber()
+    {
+        var rigidbody = GetComponent<Rigidbody>();
+        rigidbody.AddForce(transform.up * 500f);
+        rigidbody.AddTorque(transform.right * 5000f);
+
+
+    }
+
+    public void ReturnToHand()
+    {
+        var rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+        this.transform.eulerAngles = new Vector3(90, 0, 0);
+
+        var positionHand = GameObject.Find("RightBaseController");
+
+        this.transform.position = positionHand.transform.position;
     }
 }
