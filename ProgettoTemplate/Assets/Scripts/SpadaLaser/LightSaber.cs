@@ -9,6 +9,8 @@ public class LightSaber : MonoBehaviour
     GameObject laser;
     Vector3 fullSize;
 
+    //public static Vector3 posUpdated;
+
     
 
     // Start is called before the first frame update
@@ -40,9 +42,11 @@ public class LightSaber : MonoBehaviour
     public void LaserController()
     {
         
-            laser.SetActive(true);
-            laser.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
-        
+        laser.SetActive(true);
+        laser.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
+
+        //posUpdated = this.transform.position;
+            
         
     }
 
