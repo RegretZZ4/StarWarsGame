@@ -10,7 +10,7 @@ public class RotationLightSaber : MonoBehaviour
     XRGrabInteractable grab;
     Rigidbody rigidbody;
 
-    [SerializeField] Transform PosSaber;
+    Transform PosSaber;
     
     
     bool count;
@@ -28,7 +28,7 @@ public class RotationLightSaber : MonoBehaviour
     void Update()
     {
         // RotateSaber();
-       
+        PosSaber = GameObject.Find("PosSaber").transform;
     }
 
     public void GetRotationSaber()
@@ -68,8 +68,8 @@ public class RotationLightSaber : MonoBehaviour
         rigidbody.angularVelocity = Vector3.zero;
         this.transform.eulerAngles = new Vector3(90, 0, 0);
 
-        //var positionHand = GameObject.Find("RightHand");
-       // rigidbody.isKinematic = true;
+        //var positionHand = GameObject.Find("RightHandBaseController");
+        // rigidbody.isKinematic = true;
 
         this.transform.position = PosSaber.transform.position;
     }
