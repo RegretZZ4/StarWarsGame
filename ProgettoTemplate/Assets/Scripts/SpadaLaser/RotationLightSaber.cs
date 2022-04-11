@@ -46,7 +46,8 @@ public class RotationLightSaber : MonoBehaviour
      
             rigidbody.AddTorque(transform.right * 50000f, ForceMode.Impulse);
 
-            Invoke("ReturnToHand", 2f);
+        //Invoke("ReturnToHand", 5f);
+        Invoke("ReturnSaber", 5f);
       //  }
 
 
@@ -72,5 +73,10 @@ public class RotationLightSaber : MonoBehaviour
         // rigidbody.isKinematic = true;
 
         this.transform.position = PosSaber.transform.position;
+    }
+
+    void ReturnSaber()
+    {
+        rigidbody.velocity = Vector3.zero;
     }
 }
