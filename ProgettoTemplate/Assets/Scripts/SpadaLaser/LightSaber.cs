@@ -62,11 +62,17 @@ public class LightSaber : MonoBehaviour
     public void ColliderEnable()
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
+        
+        
         if (laser.transform.localScale.y > 0)
         {
             laser.transform.localScale = new Vector3(0, 0, 0);
         }
         laser.SetActive(false);
+
+        
         //laser.GetComponent<CapsuleCollider>().enabled = true;
     }
+
+
 }
