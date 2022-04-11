@@ -8,6 +8,9 @@ public class RotationLightSaber : MonoBehaviour
 {
     Vector3 angleVelocity;
     XRGrabInteractable grab;
+    Rigidbody rigidbody;
+
+    [SerializeField] Transform PosSaber;
     
     
     bool count;
@@ -17,6 +20,8 @@ public class RotationLightSaber : MonoBehaviour
         //angleVelocity = new Vector3(90, 0, 0);
         count = false;
         grab = GetComponent<XRGrabInteractable>();
+
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,30 +34,43 @@ public class RotationLightSaber : MonoBehaviour
     public void GetRotationSaber()
     {
         
-        var rigidbody = GetComponent<Rigidbody>();
-        if (rigidbody.velocity.magnitude > 0)
-        {
-            //grab.enabled = false;
-            rigidbody.AddForce(transform.up * 500f);
-            rigidbody.AddTorque(transform.right * 5000f);
+        //var rigidbody = GetComponent<Rigidbody>();
+        //if (rigidbody.velocity.magnitude > 0)
+       // {
+            Debug.LogWarning("ROTAZIONE");
+        //grab.enabled = false;
 
-            Invoke("ReturnToHand", 3f);
-        }
+        rigidbody.useGravity = false;
+
+            rigidbody.AddForce(transform.up * 10f, ForceMode.Impulse);
+     
+            rigidbody.AddTorque(transform.right * 50000f, ForceMode.Impulse);
+
+            Invoke("ReturnToHand", 2f);
+      //  }
 
 
 
     }
 
+    public IEnumerator RotationCoroutine()
+    {
+        yield return 0;
+    }
+
     public void ReturnToHand()
     {
+        rigidbody.useGravity = true;
+        Debug.LogWarning("RETURN HAND");
         //grab.enabled = true;
-        var rigidbody = GetComponent<Rigidbody>();
+      //  var rigidbody = GetComponent<Rigidbody>();
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
         this.transform.eulerAngles = new Vector3(90, 0, 0);
 
-        var positionHand = GameObject.Find("RightHand");
+        //var positionHand = GameObject.Find("RightHand");
+       // rigidbody.isKinematic = true;
 
-        this.transform.position = positionHand.transform.position;
+        this.transform.position = PosSaber.transform.position;
     }
 }

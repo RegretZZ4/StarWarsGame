@@ -9,6 +9,9 @@ public class LightSaber : MonoBehaviour
     GameObject laser;
     Vector3 fullSize;
 
+    bool isActive;
+    int countActive;
+
     //public static Vector3 posUpdated;
 
     
@@ -19,6 +22,9 @@ public class LightSaber : MonoBehaviour
         laser = transform.Find("SingleLine-LightSaber").gameObject;
         fullSize = laser.transform.localScale;
         laser.transform.localScale = new Vector3(0, 0, 0);
+
+        isActive = false;
+        countActive = 0;
 
         //HandInputHandler = GameObject.Find("XR Origin_custom").GetComponent<HandInputHandler>();
     }
@@ -44,6 +50,7 @@ public class LightSaber : MonoBehaviour
         
         laser.SetActive(true);
         laser.transform.localScale = new Vector3(0.15f, 0.05f, 0.15f);
+        countActive++;
 
         //posUpdated = this.transform.position;
             
@@ -61,18 +68,33 @@ public class LightSaber : MonoBehaviour
 
     public void ColliderEnable()
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = true;
+        //this.gameObject.GetComponent<BoxCollider>().enabled = true;
         
-        
-        if (laser.transform.localScale.y > 0)
+        if(countActive == 2)
         {
-            laser.transform.localScale = new Vector3(0, 0, 0);
+            if (laser.transform.localScale.y > 0)
+            {
+                laser.transform.localScale = new Vector3(0, 0, 0);
+            }
+            laser.SetActive(false);
+            countActive = 0;
         }
-        laser.SetActive(false);
+
 
         
         //laser.GetComponent<CapsuleCollider>().enabled = true;
     }
 
+    public void KinematicFalse()
+    {
+        var rigidbody = GetComponent<Rigidbody>();
+        rigidbody.isKinematic = false;
+    }
+
+    public void KinematicTrue()
+    {
+        var rigidbody = GetComponent<Rigidbody>();
+        rigidbody.isKinematic = true;
+    }
 
 }

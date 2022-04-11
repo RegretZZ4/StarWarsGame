@@ -29,7 +29,11 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "saber")
+        {
 
+            Destroy(this.gameObject);
+        }
     }
 
 
@@ -44,5 +48,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    
+
     */
+
+
 }

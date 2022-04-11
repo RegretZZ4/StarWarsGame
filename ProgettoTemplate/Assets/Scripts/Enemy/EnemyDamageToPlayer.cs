@@ -63,6 +63,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
         if (Physics.Raycast(startPos.transform.position, startPos.transform.forward, out hit, range))
         {
+            LaserCollision.bouncedLaser = false;
             Debug.Log("SHOOT: " + hit.transform);
 
             GameObject laser = GameObject.Instantiate(laser_prefab, this.transform.position, transform.rotation) as GameObject;

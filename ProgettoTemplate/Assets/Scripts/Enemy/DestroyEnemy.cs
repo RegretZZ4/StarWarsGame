@@ -17,7 +17,7 @@ public class DestroyEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.LogWarning(LaserCollision.bouncedLaser);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +45,11 @@ public class DestroyEnemy : MonoBehaviour
                 contHit++;
                 if (contHit >= 2)
                 {
+                    contHit = 0;
                     Destroy(this.gameObject);
+
+                    LaserCollision.bouncedLaser = false;
+                    
                 }
             }
         }

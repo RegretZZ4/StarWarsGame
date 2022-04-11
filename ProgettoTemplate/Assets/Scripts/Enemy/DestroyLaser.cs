@@ -6,12 +6,16 @@ public class DestroyLaser : MonoBehaviour
 {
     bool velzero;
 
+    public bool hittedBySaber;
+
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         Invoke("LaserDestroy", 20f);
         velzero = false;
+        hittedBySaber = false;
+
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class DestroyLaser : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
             {
-            if (LaserCollision.bouncedLaser == true)
+            if (hittedBySaber == true)
             {
                 //var rigidbodyEnemy = other.gameObject.GetComponent<Rigidbody>();
 
@@ -50,15 +54,23 @@ public class DestroyLaser : MonoBehaviour
                 Debug.LogWarning("triggerEnemy");
 
                 LaserCollision.bouncedLaser = false;
+                hittedBySaber = false;
 
             }
+        }
+
+        if(other.gameObject.tag == "saber")
+        {
+            hittedBySaber = true;
         }
     }
 
     void VelocityZero()
     {
-        rb.velocity = Vector3.zero;
-        Debug.LogError("ciao");
+        if(rb != null)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 
     }
