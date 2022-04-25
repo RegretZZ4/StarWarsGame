@@ -48,6 +48,8 @@ public class EnemyAI_Special : MonoBehaviour
             if(contHit >= 3)
             {
                 Destroy(this.gameObject);
+
+                GameManager.scorePlayer += 200;
             }
             //Destroy(this.gameObject);
         }

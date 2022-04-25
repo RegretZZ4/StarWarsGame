@@ -33,9 +33,12 @@ public class DestroyEnemy_Special : MonoBehaviour
                 //damage to player
                 hitted = true;
 
+
+
             }
 
             Destroy(this.gameObject, 0.2f);
+            GameManager.scorePlayer -= 30;
         }
 
         if (other.gameObject.tag == "enemyLaser")

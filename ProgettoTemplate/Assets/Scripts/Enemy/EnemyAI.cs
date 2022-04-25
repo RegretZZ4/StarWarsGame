@@ -36,6 +36,8 @@ public class EnemyAI : MonoBehaviour
         {
 
             Destroy(this.gameObject);
+
+            GameManager.scorePlayer += 50;
         }
     }
 

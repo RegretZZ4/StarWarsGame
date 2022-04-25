@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static float shootTimer;
+
+    public static int scorePlayer;
+
+    [SerializeField] TMP_Text score_int;
 
     float timer;
     // Start is called before the first frame update
@@ -12,11 +18,14 @@ public class GameManager : MonoBehaviour
     {
         shootTimer = 3f;
         timer = 0f;
+
+        scorePlayer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        score_int.text = scorePlayer.ToString();
 
         timer += Time.deltaTime;
 
