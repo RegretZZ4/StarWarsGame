@@ -31,6 +31,9 @@ public class EnemyDamageToPlayer : MonoBehaviour
     {
         timer = 0;
         playerHit = false;
+
+
+        //startPos = GameObject.FindGameObjectWithTag("LaserPos");
         // lineRenderer.GetComponent<LineRenderer>();
 
         
@@ -48,7 +51,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
             randomHit = Random.Range(0, 100);
 
-            if(randomHit > 80 && randomHit < 90)
+            if(randomHit > 50 && randomHit < 90)
             {
                 Shoot();
             }
@@ -63,6 +66,7 @@ public class EnemyDamageToPlayer : MonoBehaviour
 
         if (Physics.Raycast(startPos.transform.position, startPos.transform.forward, out hit, range))
         {
+            Debug.Log("SPARA DRONE");
             LaserCollision.bouncedLaser = false;
             Debug.Log("SHOOT: " + hit.transform);
 

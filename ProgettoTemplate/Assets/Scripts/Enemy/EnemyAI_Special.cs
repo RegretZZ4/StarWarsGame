@@ -39,6 +39,11 @@ public class EnemyAI_Special : MonoBehaviour
     {
         if (other.gameObject.tag == "saber")
         {
+
+            //applicare la forza
+
+
+
             contHit++;
             if(contHit >= 3)
             {

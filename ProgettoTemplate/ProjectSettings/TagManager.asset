@@ -17,6 +17,7 @@ TagManager:
   - saber
   - enemyLaser
   - enemy
+  - LaserPos
   layers:
   - Default
   - TransparentFX

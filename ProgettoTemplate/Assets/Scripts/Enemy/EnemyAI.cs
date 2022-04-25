@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     //[SerializeField] Transform player;
     GameObject player;
-    [SerializeField] NavMeshAgent nv_enemy;
+    NavMeshAgent nv_enemy;
 
     GameObject lookAt;
 
@@ -17,11 +17,14 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lookAt = GameObject.FindGameObjectWithTag("lookAt");
+
+        nv_enemy = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         nv_enemy.SetDestination(player.transform.position);
         
         this.transform.LookAt(lookAt.transform);

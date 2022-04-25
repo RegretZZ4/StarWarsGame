@@ -28,7 +28,7 @@ public class RotationLightSaber : MonoBehaviour
     void Update()
     {
         // RotateSaber();
-        PosSaber = GameObject.Find("PosSaber").transform;
+        //PosSaber = GameObject.Find("PosSaber").transform;
     }
 
     public void GetRotationSaber()
