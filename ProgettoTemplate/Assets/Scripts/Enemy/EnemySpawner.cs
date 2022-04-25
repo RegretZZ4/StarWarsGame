@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy = prefab_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(prefab_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(prefab_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
                 //enemy.transform.LookAt(lookAt_Player);
 
 
@@ -73,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
                 //enemy = prefab_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(prefab_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(prefab_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
 
             }
 
@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy = prefab_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(prefab_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(prefab_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
 
 
             }
@@ -102,7 +102,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy = specialEnemy_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
                 //enemy.transform.LookAt(lookAt_Player);
 
 
@@ -115,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy = specialEnemy_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
 
             }
 
@@ -127,7 +127,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy = specialEnemy_ref;
 
                 randomNum = Random.Range(0, 4);
-                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(randomNum, 0, randomNum), Quaternion.identity);
+                Instantiate(specialEnemy_ref, findObj.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
 
 
             }
