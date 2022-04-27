@@ -31,7 +31,7 @@ public class CameraHit : MonoBehaviour
 
             ChangeMaterial_inRed();
 
-            GameManager.scorePlayer -= 10;
+            GameManager.scorePlayer -= 30;
 
             
         }
