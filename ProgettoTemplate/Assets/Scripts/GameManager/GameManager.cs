@@ -41,5 +41,14 @@ public class GameManager : MonoBehaviour
         // se difficolta livello = 1, velocita' = 3
         // se diff lv == 2, velocita' = 2
         // se diff lv == 3, velocita' = 1
+
+        if(scorePlayer < 0)
+        {
+            Debug.Log("GameOver!");
+            
+           // Time.timeScale = 0; //stoppo il gioco: fare GameOver (Se c'e' Tempo)
+        }
     }
+
+   
 }

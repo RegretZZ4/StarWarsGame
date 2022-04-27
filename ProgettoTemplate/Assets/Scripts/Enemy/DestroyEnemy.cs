@@ -36,14 +36,14 @@ public class DestroyEnemy : MonoBehaviour
             }
 
             Destroy(this.gameObject, 0.2f);
-            GameManager.scorePlayer -= 30;
+            GameManager.scorePlayer -= 5;
         }
 
         if (other.gameObject.tag == "enemyLaser")
         {
             if (LaserCollision.bouncedLaser)
             {
-                GameManager.scorePlayer += 100;
+                GameManager.scorePlayer += 50;
                 contHit++;
                 if (contHit >= 2)
                 {
