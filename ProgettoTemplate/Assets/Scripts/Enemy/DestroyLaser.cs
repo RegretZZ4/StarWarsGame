@@ -63,6 +63,14 @@ public class DestroyLaser : MonoBehaviour
         {
             hittedBySaber = true;
         }
+
+        if(other.gameObject.tag == "Player")
+        {
+            GameManager.scorePlayer -= 5;
+
+            TimerHitStart();
+            Invoke("TimerHitEnd", 0.5f);
+        }
     }
 
     void VelocityZero()
@@ -73,6 +81,20 @@ public class DestroyLaser : MonoBehaviour
         }
 
 
+    }
+
+    void TimerHitStart()
+    {
+        CameraHit cameraHit = gameObject.GetComponent<CameraHit>();
+
+        cameraHit.ChangeMaterial_inRed();
+    }
+
+    void TimerHitEnd()
+    {
+        CameraHit cameraHit = gameObject.GetComponent<CameraHit>();
+
+        cameraHit.ChangeMaterial_inTrasparent();
     }
 
 
