@@ -18,6 +18,7 @@ TagManager:
   - enemyLaser
   - enemy
   - LaserPos
+  - RedSignal
   layers:
   - Default
   - TransparentFX

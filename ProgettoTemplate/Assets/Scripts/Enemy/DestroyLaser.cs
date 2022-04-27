@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyLaser : MonoBehaviour
 {
     bool velzero;
 
     public bool hittedBySaber;
+
+    GameObject imageHit;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -15,6 +18,8 @@ public class DestroyLaser : MonoBehaviour
         Invoke("LaserDestroy", 20f);
         velzero = false;
         hittedBySaber = false;
+
+        imageHit = GameObject.FindGameObjectWithTag("RedSignal");
 
     }
 
@@ -57,20 +62,16 @@ public class DestroyLaser : MonoBehaviour
                 hittedBySaber = false;
 
             }
+
         }
+
 
         if(other.gameObject.tag == "saber")
         {
             hittedBySaber = true;
         }
 
-        if(other.gameObject.tag == "Player")
-        {
-            GameManager.scorePlayer -= 5;
-
-            TimerHitStart();
-            Invoke("TimerHitEnd", 0.5f);
-        }
+           
     }
 
     void VelocityZero()
@@ -83,19 +84,7 @@ public class DestroyLaser : MonoBehaviour
 
     }
 
-    void TimerHitStart()
-    {
-        CameraHit cameraHit = gameObject.GetComponent<CameraHit>();
 
-        cameraHit.ChangeMaterial_inRed();
-    }
-
-    void TimerHitEnd()
-    {
-        CameraHit cameraHit = gameObject.GetComponent<CameraHit>();
-
-        cameraHit.ChangeMaterial_inTrasparent();
-    }
 
 
 }

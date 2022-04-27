@@ -5,42 +5,55 @@ using UnityEngine.UI;
 
 public class CameraHit : MonoBehaviour
 {
-    Color hit_material;
-    [SerializeField] Image panel;
+    
+    //Color hit_material;
+    float alpha = 74f;
+    [SerializeField] Material material;
     //Camera camera;
 
     // Start is called before the first frame update
     void Start()
     {
+        material.color = new Color(139f, 0f, 0f, 0f);
+        //this.gameObject.SetActive(false);
         //camera = GetComponent<Camera>();
-       // camera.clearFlags = CameraClearFlags.SolidColor;
+        // camera.clearFlags = CameraClearFlags.SolidColor;
+
+
     }
+
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "enemyLaser")
+        {
+            Debug.Log("sono stato colpito");
+
+            ChangeMaterial_inRed();
+
+            
+        }
+    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ChangeMaterial_inRed()
     {
-        hit_material = new Color(178, 48, 48, 255); //rosso
+        //this.gameObject.SetActive(true);
+        material.color = new Color(139f, 0f, 0f, alpha);
 
-        panel = GetComponent<Image>();
-
-        panel.color = hit_material;
-        
-
-       // camera.backgroundColor = hit_material;
+        Invoke("ChangeMaterial_inTrasparent", 0.2f);
     }
 
     public void ChangeMaterial_inTrasparent()
     {
-        hit_material = new Color(255, 255, 255, 0);
-        // camera.backgroundColor = hit_material;
+        material.color = new Color(139f, 0f, 0f, 0f);
 
-        panel = GetComponent<Image>();
-
-        panel.color = hit_material;
-    }
+        //this.gameObject.SetActive(false);
+    }//
 }
